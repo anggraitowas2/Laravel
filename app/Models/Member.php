@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    use HasFactory;
     protected $guarded = ['id'];
+    protected $fillable = ['name','position','quote','picture'];
 }

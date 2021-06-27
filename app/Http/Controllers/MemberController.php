@@ -16,7 +16,7 @@ class MemberController extends Controller
     public function index()
     {
         $members = Member::all();
-        return view('/author/author',compact('members'));
+        return view ('author.author',compact('members'));
     }
 
     /**
@@ -24,10 +24,10 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        Member::create($request->all());
-      return redirects('/author');
+        $members = Member::create($request->all());
+        return redirect('/redirects');
     }
 
     /**
@@ -38,8 +38,7 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $members = Member::create($request->all());
-        return redirects('/author');
+        //
     }
 
     /**
@@ -50,8 +49,7 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        $members = Member::find($id);
-        return redirects('/author',compact('members'));
+        //
     }
 
     /**
@@ -60,11 +58,11 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $members = Member::findOrFail($id);
-        return redirects('/author/edit', compact('members'));
-        
+        $members = Member::findOrFail($request->id);
+        $members->update($request->all());
+        return redirect('/redirects');
     }
 
     /**
@@ -74,11 +72,9 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        $members = Member::find($id);
-        $members->update($request->all());
-        return view('/author/edit',compact('members'));
+        //
     }
 
     /**
@@ -87,10 +83,10 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $members = Member::find($id);
+        $members = Member::find($request->id);
         $members->delete();
-        return redirects('/author',compact('destroy'));
+        return redirect('/redirects');
     }
 }

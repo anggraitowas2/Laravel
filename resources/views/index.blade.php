@@ -35,7 +35,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-        <li><a href="author">Admin</a></li>
+        <li><a href="/redirects">Admin</a></li>
           <li><a href="#feature">Features</a></li>
           <li><a href="#organisations">Organisations</a></li>
           <li><a href="#courses">Courses</a></li>

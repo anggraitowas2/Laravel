@@ -18,13 +18,20 @@ use App\Http\Controllers\MemberController;
 Route::get('/', function () {
     return view('index');
 });
- Route::get('author', function () {
-     return view('author.author');
+Route::get('edit', function () {
+    return view('author.edit');
 });
+
+// Route::get('/author', function () {
+//      return view('author.author');
+// });
+// Route::get('member', function () {
+//     return view('author.author');
+// });
 // Route::get('edit', function () {
 //     return view('/author.edit');
 // });
-Route::resource('member', MemberController::class);
+// Route::resource('redirects', MemberController::class);
 // Route::get('user', function () {
 //     return view('author.user');
 // });
@@ -40,10 +47,10 @@ Route::resource('member', MemberController::class);
 // Route::get('redirects',[IndexController::class,'index']);
 
 Route::get('redirects',[MemberController::class,'index']);
-Route::post('redirects',[MemberController::class,'store']);
-Route::get('redirects',[MemberController::class,'edit']);
-Route::post('member',[MemberController::class,'update']);
-Route::delete('member',[MemberController::class,'destroy']);
+Route::post('redirects',[MemberController::class,'create']);
+Route::put('redirects',[MemberController::class,'edit']);
+// Route::post('redirects',[MemberController::class,'update']);
+Route::delete('redirects',[MemberController::class,'destroy']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

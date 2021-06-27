@@ -14,19 +14,13 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="{{asset('admin/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <!-- <link href="{{asset('admin/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"> -->
   <!--external css-->
   <link href="{{asset('admin/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
   <link href="{{asset('admin/css/style-responsive.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -41,192 +35,6 @@
       </div>
       <!--logo start-->
       <a href="index.html" class="logo"><b>DASH<span>IO</span></b></a>
-      <!--logo end-->
-      <div class="nav notify-row" id="top_menu">
-        <!--  notification start -->
-        <ul class="nav top-menu">
-          <!-- settings start -->
-          <!-- <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-tasks"></i>
-              <span class="badge bg-theme">4</span>
-              </a>
-            <ul class="dropdown-menu extended tasks-bar">
-              <div class="notify-arrow notify-arrow-green"></div>
-              <li>
-                <p class="green">You have 4 pending tasks</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Dashio Admin Panel</div>
-                    <div class="percent">40%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Database Update</div>
-                    <div class="percent">60%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                      <span class="sr-only">60% Complete (warning)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Product Development</div>
-                    <div class="percent">80%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                      <span class="sr-only">80% Complete</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Payments Sent</div>
-                    <div class="percent">70%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                      <span class="sr-only">70% Complete (Important)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="external">
-                <a href="#">See All Tasks</a>
-              </li>
-            </ul>
-          </li>
-          <!-- settings end -->
-          <!-- inbox dropdown start-->
-          <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-envelope-o"></i>
-              <span class="badge bg-theme">5</span>
-              </a>
-            <ul class="dropdown-menu extended inbox">
-              <div class="notify-arrow notify-arrow-green"></div>
-              <li>
-                <p class="green">You have 5 new messages</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
-                  </span>
-                  <span class="message">
-                  Hi mate, how is everything?
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
-                  </span>
-                  <span class="message">
-                  Hi, I need your help with this.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
-                  </span>
-                  <span class="message">
-                  Love your new Dashboard.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
-                  </span>
-                  <span class="message">
-                  Please, answer asap.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">See all messages</a>
-              </li>
-            </ul>
-          </li>
-          <!-- inbox dropdown end -->
-          <!-- notification dropdown start-->
-          <li id="header_notification_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-bell-o"></i>
-              <span class="badge bg-warning">7</span>
-              </a>
-            <ul class="dropdown-menu extended notification">
-              <div class="notify-arrow notify-arrow-yellow"></div>
-              <li>
-                <p class="yellow">You have 7 new notifications</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  Server Overloaded.
-                  <span class="small italic">4 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-warning"><i class="fa fa-bell"></i></span>
-                  Memory #2 Not Responding.
-                  <span class="small italic">30 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  Disk Space Reached 85%.
-                  <span class="small italic">2 hrs.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-success"><i class="fa fa-plus"></i></span>
-                  New User Registered.
-                  <span class="small italic">3 hrs.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">See all notifications</a>
-              </li>
-            </ul>
-          </li> -->
-          <!-- notification dropdown end -->
-        </ul>
-        <!--  notification end -->
-      </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           
@@ -236,7 +44,7 @@
                     <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                                    <li class="logout">Logout</a></li>
+                                    <ul  class="btn btn-primary">Logout</ul></a>
                     
                 </form>
         </ul>
@@ -254,114 +62,17 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index.html">
+            <a href="index.php">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-desktop"></i>
-              <span>UI Elements</span>
+            <a href="/redirects">
+              <i class="fa fa-android"></i>
+              <span>Member</span>
               </a>
-            <ul class="sub">
-              <li><a href="general.html">General</a></li>
-              <li><a href="buttons.html">Buttons</a></li>
-              <li><a href="panels.html">Panels</a></li>
-              <li><a href="font_awesome.html">Font Awesome</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-cogs"></i>
-              <span>Components</span>
-              </a>
-            <ul class="sub">
-              <li><a href="grids.html">Grids</a></li>
-              <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="todo_list.html">Todo List</a></li>
-              <li><a href="dropzone.html">Dropzone File Upload</a></li>
-              <li><a href="inline_editor.html">Inline Editor</a></li>
-              <li><a href="file_upload.html">Multiple File Upload</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a class="active" href="javascript:;">
-              <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
-              </a>
-            <ul class="sub">
-              <li class="active"><a href="blank.html">Blank Page</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="invoice.html">Invoice</a></li>
-              <li><a href="pricing_table.html">Pricing Table</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="404.html">404 Error</a></li>
-              <li><a href="500.html">500 Error</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-tasks"></i>
-              <span>Forms</span>
-              </a>
-            <ul class="sub">
-              <li><a href="form_component.html">Form Components</a></li>
-              <li><a href="advanced_form_components.html">Advanced Components</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
-              <li><a href="contactform.html">Contact Form</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-th"></i>
-              <span>Data Tables</span>
-              </a>
-            <ul class="sub">
-              <li><a href="basic_table.html">Basic Table</a></li>
-              <li><a href="responsive_table.html">Responsive Table</a></li>
-              <li><a href="advanced_table.html">Advanced Table</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="inbox.html">
-              <i class="fa fa-envelope"></i>
-              <span>Mail </span>
-              <span class="label label-theme pull-right mail-info">2</span>
-              </a>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class=" fa fa-bar-chart-o"></i>
-              <span>Charts</span>
-              </a>
-            <ul class="sub">
-              <li><a href="morris.html">Morris</a></li>
-              <li><a href="chartjs.html">Chartjs</a></li>
-              <li><a href="flot_chart.html">Flot Charts</a></li>
-              <li><a href="xchart.html">xChart</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-comments-o"></i>
-              <span>Chat Room</span>
-              </a>
-            <ul class="sub">
-              <li><a href="lobby.html">Lobby</a></li>
-              <li><a href="chat_room.html"> Chat Room</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="google_maps.html">
-              <i class="fa fa-map-marker"></i>
-              <span>Google Maps </span>
-              </a>
-          </li>
-        </ul>
+           
         <!-- sidebar menu end-->
       </div>
     </aside>
@@ -372,53 +83,58 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-        <div class="row mt">
-          <div class="col-lg-12">
-          {{-- Ini Tombol Tambah --}}
-                          <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#tambah"><span>Tambah Data</span></button>
-                          <div id="tambah" class="modal fade" role="dialog">
-                       <div class="modal-dialog">
-                           <div class="modal-content">
-                               <div class="modal-header">
-                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                   
-                               </div>
-                               <form action="" method="POST" enctype="multipart/from-data">             
-                               @csrf
-                                   <div class="modal-body">
-                                     <div class="from-group">
-                                         <label class="control-label" for="nm_brg" style="color: black">Nama</label>
-                                         <input type="text" name="name" class="from-control" id="nm_brg" style="color: black" required>
-                                     </div>
-                                     <div class="from-group">
-                                         <label class="control-label" for="nm_brg" style="color: black">Position</label>
-                                         <input type="text" name="position" class="from-control" id="nm_brg" style="color: black" required>
-                                     </div>
-                                     <div class="from-group">
-                                        <label class="control-label" for="nm_brg" style="color: black">Quote</label>
-                                        <input type="text" name="quote" class="from-control" id="nm_brg" style="color: black" required>
-                                    </div>
-                                    <div class="from-group">
-                                        <label class="control-label" for="nm_brg" style="color: black">Picture</label>
-                                        <input type="text" name="picture" class="from-control" id="nm_brg" style="color: black" required>
-                                    </div>
-                                         
-                                   <div class="modal-footer">
-                                       <button type="reset" class="btn btn-danger">Reset</button>
-                                       <input type="submit" class="btn btn-success" value="Save">
-                                   </div>
-                                   </div>
-                                   </form>
-                                   </div>
-                                   </div>
-                                   </div>
-                                   {{-- end tombol tambah --}}
-                                   <div class="row mt">
+        <h3><i class="fa fa-angle-right"></i>Data Member</h3>
+        <!-- @if(session('sukses'))
+        <div class="alert alert-success" role="alert">
+  Success
+</div>
+@endif -->
+          <div class="col-lg-12"><!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Member
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="" method="POST">
+      @csrf
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Position</label>
+    <input name="position"type="text" class="form-control" id="exampleInput" placeholder ='Enter your position Bro'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Quote</label>
+    <input name="quote" type="text" class="form-control" id="exampleInputPassword1" placeholder ='Enter your quote'>
+  </div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Picture</label>
+  <input name="picture" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+</div>
+  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
           <div class="col-md-12">
             <div class="content-panel">
               <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
                 <hr>
                 <thead>
                   <tr>
@@ -435,57 +151,98 @@
                   @foreach($members as $member)
                     <td><a href="#">{{$member->name}}</a></td>
                     <td class="hidden-phone">{{$member->position}}</td>
-                    <td class="hidden-phone">{{$member->picture}}</td>
+                    <td class="hidden-phone">{{$member->quote}}</td>
                     <td><img src="{{ URL::to($member->picture) }}" alt="" width="100" 
                             height="80"></td>
-                            <td><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></td>
-                            
-                  </tr>
-                  <td>
-                  <button><a type="button" class="btn btn-dark">Edit<a href="redirects/{{$member->id}}"></button></a>
-                <form action="/author/{{$member->id}}" method="POST">
-                @method('DELETE')
-                @csrf
-                <input type="submit" value="Delete">
-                </form>
-                
-            </td>
+                    <td><div class="col-lg-12"><!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{$member->id}}">
+  Edit
+</button>
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$member->id}}">
+  Delete
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="edit{{$member->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="" method="POST">
+      @method('PUT')
+      @csrf
+      <input type="hidden" name="id" value="{{$member->id}}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input value="{{$member->name}}" name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Position</label>
+    <input value="{{$member->position}}"name="position"type="text" class="form-control" id="exampleInput" placeholder ='Enter your position Bro'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Quote</label>
+    <input value="{{$member->quote}}"name="quote" type="text" class="form-control" id="exampleInputPassword1" placeholder ='Enter your quote'>
+  </div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Picture</label>
+  <input value="{{$member->picture}}"name="picture" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+</div>
+  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<td><div class="col-lg-12"><!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="delete{{$member->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="" method="POST">
+      @method('DELETE')
+      @csrf
+      <input type="hidden" name="id" value="{{$member->id}}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Are you sure to delete?</label>
+  </div>
+  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-danger">Yes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
         </tr>
         @endforeach
         
 </tbody>
-            <!-- <p>Place your content here.</p> -->
+            
           </div>
         </div>
       </section>
       <!-- /wrapper -->
     </section>
-    <!-- /MAIN CONTENT -->
-    <!--main content end-->
-    <!--footer start-->
-    <!-- <footer class="site-footer">
-      <div class="text-center">
-        <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
-        </p>
-        <div class="credits"> -->
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
-          <!-- Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
-        </div> -->
-        <a href="blank.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
-          </a>
-      </div>
-    </footer>
-    <!--footer end-->
-  </section>
+   
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="{{asset('admin/lib/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('admin/lib/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -497,7 +254,9 @@
   <!--common script for all pages-->
   <script src="{{asset('admin/lib/common-scripts.js')}}"></script>
   <!--script for this page-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
