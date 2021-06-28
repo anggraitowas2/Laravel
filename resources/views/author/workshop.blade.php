@@ -34,7 +34,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>Star<span>Dom</span></b></a>
+      <a href="/" class="logo"><b>Star<span>Dom</span></b></a>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           

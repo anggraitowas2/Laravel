@@ -34,7 +34,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>Star<span>dom</span></b></a>
+      <a href="/" class="logo"><b>Star<span>dom</span></b></a>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           
@@ -166,8 +166,7 @@
                   @foreach($courses as $course)
                     <td>{{$course->name}}</td>
                     <td class="hidden-phone">{{$course->statement}}</td>
-                    <td><img src="{{ URL::to($course->picture) }}" alt="" width="100" 
-                            height="80"></td>
+                    <td><img src="{{asset('img/' . $course->picture )}}" alt="" width="100" height="80"></td>
                     <td><div class="col-lg-12"><!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{$course->id}}">
   Edit
