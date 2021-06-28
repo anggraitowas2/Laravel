@@ -61,7 +61,7 @@ Route::delete('/author/course',[CourseController::class,'destroy']);
 
 
 //INDEX
-Route::get('/',[IndexController::class,'member'])->name('main');
+Route::get('/',[IndexController::class,'member']);
 
 //MEMBER
 Route::get('redirects',[MemberController::class,'index']);
