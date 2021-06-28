@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Workshop;
 
 class WorkshopController extends Controller
 {
@@ -13,7 +14,8 @@ class WorkshopController extends Controller
      */
     public function index()
     {
-        //
+        $workshops = Workshop::all();
+        return view ('author.workshop',compact('workshops'));
     }
 
     /**
@@ -21,9 +23,10 @@ class WorkshopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $workshops = Workshop::create($request->all());
+        return redirect('author/workshop');
     }
 
     /**
@@ -54,9 +57,11 @@ class WorkshopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $workshops = Workshop::findOrFail($request->id);
+        $workshops->update($request->all());
+        return redirect('author/workshop');
     }
 
     /**
@@ -77,8 +82,10 @@ class WorkshopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $workshops = Workshop::find($request->id);
+        $workshops->delete();
+        return redirect('author/workshop');
     }
 }

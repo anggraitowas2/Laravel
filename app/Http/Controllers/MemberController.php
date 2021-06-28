@@ -15,8 +15,16 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = Member::all();
-        return view ('author.author',compact('members'));
+        $role=Auth::user()->role;
+
+        if($role=='1')
+        {
+            $members = Member::all();
+            return view ('author.author',compact('members'));
+        }
+        else{
+            return view('dashboard');
+        }
     }
 
     /**
@@ -26,6 +34,14 @@ class MemberController extends Controller
      */
     public function create(Request $request)
     {
+        $input = $request->all();
+  
+        if ($image = $request->file('picture')) {
+            $destinationPath = 'img';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['picture'] = "$profileImage";
+        }
         $members = Member::create($request->all());
         return redirect('/redirects');
     }

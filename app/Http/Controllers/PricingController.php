@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pricing;
 
 class PricingController extends Controller
 {
@@ -13,7 +14,8 @@ class PricingController extends Controller
      */
     public function index()
     {
-        //
+        $pricings = Pricing::all();
+        return view ('author.pricing',compact('pricings'));
     }
 
     /**
@@ -21,9 +23,10 @@ class PricingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $pricings = Pricing::create($request->all());
+        return redirect('author/pricing');
     }
 
     /**
@@ -54,9 +57,11 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $pricings = Pricing::findOrFail($request->id);
+        $pricings->update($request->all());
+        return redirect('author/pricing');
     }
 
     /**
@@ -77,8 +82,10 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $pricings = Pricing::find($request->id);
+        $pricings->delete();
+        return redirect('author/pricing');
     }
 }

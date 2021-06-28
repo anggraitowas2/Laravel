@@ -196,40 +196,23 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
+       
           <h2>Upcoming Workshop</h2>
           
           <hr class="bottom-line">
         </div>
+        @foreach($workshops as $workshop)
         <div class="col-md-4 col-sm-6">
           <div class="service-box text-center">
             <div class="icon-box">
-              <i class="fa fa-html5 color-green"></i>
+              <img width="200" height="140" src="{{$workshop->picture}}"></img>
             </div>
             <div class="icon-text">
-              <h4 class="ser-text">Mentor HTML5 Workshop</h4>
+              <h4 class="ser-text">{{$workshop->name}}</h4>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="service-box text-center">
-            <div class="icon-box">
-              <i class="fa fa-css3 color-green"></i>
-            </div>
-            <div class="icon-text">
-              <h4 class="ser-text">Mentor CSS3 Workshop</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="service-box text-center">
-            <div class="icon-box">
-              <i class="fa fa-joomla color-green"></i>
-            </div>
-            <div class="icon-text">
-              <h4 class="ser-text">Mentor Joomla Workshop</h4>
-            </div>
-          </div>
-        </div>
+        @endforeach 
       </div>
     </div>
   </section>
@@ -242,56 +225,31 @@
           <h2>Meet Our Faculty Member</h2>
           <hr class="bottom-line">
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
+
+        @foreach ($members as $member)
+         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pm-staff-profile-container">
             <div class="pm-staff-profile-image-wrapper text-center">
               <div class="pm-staff-profile-image">
-                <img src="img/andy.jpg" alt="" class="img-thumbnail img-circle" />
+                <img src="{{ asset('img/'. $member->picture)}}"class="img-thumbnail img-circle"></img>
               </div>
             </div>
             <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Andi Putra Prasetyo</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
+              <p class="pm-staff-profile-name">{{$member->name}}</p>
+              <p class="pm-staff-profile-title">{{$member->position}}</p>
 
-              <p class="pm-staff-profile-bio">"Life is like riding a bicycle. To keep your balance, you must keep moving." </p>
+              <p class="pm-staff-profile-bio">"{{$member->quote}}" </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="img/anggra.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Anggraito Waspada</p>
-              <p class="pm-staff-profile-title">CTO</p>
-
-              <p class="pm-staff-profile-bio">"You can do nice things for people all of the time and it's never noticed, but as soon as you make one mistake it's never forgotten." </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="img/fandy1.jpeg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Adilla Ihza Fandy</p>
-              <p class="pm-staff-profile-title">CEO</p>
-
-              <p class="pm-staff-profile-bio">"The purpose of our lives is to be happy." </p>
-            </div>
-          </div>
-        </div>
+      @endforeach
+      
       </div>
     </div>
   </section>
   <!--/ Faculity member-->
   <!--Testimonial-->
+  
   <section id="testimonial" class="section-padding">
     <div class="container">
       <div class="row">
@@ -300,20 +258,17 @@
           
           <hr class="bottom-line bg-white">
         </div>
+        @foreach ($feedbacks as $feedback)
         <div class="col-md-6 col-sm-6">
           <div class="text-comment">
-            <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-            <p class="text-name">Abraham Doe - Creative Dırector</p>
-          </div>
+            <p class="text-par">"{{$feedback->feed}}"</p>
+            <p class="text-name">"{{$feedback->name}}"</p>
+          </div>          
         </div>
-        <div class="col-md-6 col-sm-6">
-          <div class="text-comment">
-            <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-            <p class="text-name">Abraham Doe - Creative Dırector</p>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
+    
   </section>
   <!--/ Testimonial-->
   <!--Courses-->
@@ -327,70 +282,24 @@
         </div>
       </div>
     </div>
+   
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-sm-6 padleft-right">
+      @foreach ($courses as $course)
+        <div class="col-md-3 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
-            <img src="img/Java.png" class="img-responsive">
+            <img height="300"width="300"src="{{$course->picture}}" class="img-responsive">
             <figcaption>
-              <h3>Java</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+              <h3>{{$course->name}}</h3>
+              <p style="text">{{$course->statement}}</p>
             </figcaption>
             <a href="#"></a>
           </figure>
         </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="img/C.png" class="img-responsive">
-            <figcaption>
-              <h3>C Programming</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="img/HTML.png" class="img-responsive">
-            <figcaption>
-              <h3>HTML</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="img/php.png" class="img-responsive">
-            <figcaption>
-              <h3>PHP</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="img/phyton.png" class="img-responsive">
-            <figcaption>
-              <h3>Phyton</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="img/dart.png" class="img-responsive">
-            <figcaption>
-              <h3>Dart</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
+        @endforeach
       </div>
     </div>
+    
   </section>
   <!--/ Courses-->
   <!--Pricing-->
@@ -399,51 +308,27 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Our Pricing</h2>
-          
+        
           <hr class="bottom-line">
         </div>
+        @foreach($pricings as $pricing)
         <div class="col-md-4 col-sm-4">
           <div class="price-table">
             <!-- Plan  -->
+            
             <div class="pricing-head">
-              <h4>Monthly Plan</h4>
-              <span class="fa fa-usd curency"></span> <span class="amount">200</span>
+              <h4>{{ $pricing->name }}</h4>
+              <span class="fa fa-usd curency"></span> <span class="amount">{{$pricing->price}}</span>
             </div>
-
+            
             <!-- Plean Detail -->
             <div class="price-in mart-15">
-              <a href="#" class="btn btn-bg green btn-block">PURCHACE</a>
+              <a href="#" class="btn btn-bg green btn-block">PURCHASE</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="price-table">
-            <!-- Plan  -->
-            <div class="pricing-head">
-              <h4>Quarterly Plan</h4>
-              <span class="fa fa-usd curency"></span> <span class="amount">800</span>
-            </div>
-
-            <!-- Plean Detail -->
-            <div class="price-in mart-15">
-              <a href="#" class="btn btn-bg yellow btn-block">PURCHACE</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="price-table">
-            <!-- Plan  -->
-            <div class="pricing-head">
-              <h4>Year Plan</h4>
-              <span class="fa fa-usd curency"></span> <span class="amount">1200</span>
-            </div>
-
-            <!-- Plean Detail -->
-            <div class="price-in mart-15">
-              <a href="#" class="btn btn-bg red btn-block">PURCHACE</a>
-            </div>
-          </div>
-        </div>
+        @endforeach
+        
       </div>
     </div>
   </section>
@@ -526,7 +411,8 @@
         <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
         <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
       </ul>
-      Copyright ©2021. All rights reserved
+      Made with <i class="fa fa-heart fa-fw"></i> 
+      
       <div class="credits">
         <!--
           All the links in the footer should remain intact.
@@ -534,7 +420,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Mentor
         -->
-        Designed by <a href="https://stardomid00.herokuapp.com/">Stardom ID</a>
+        Copyright ©2021 | Designed by <a href="https://stardomid00.herokuapp.com/">Stardom ID</a> 
       </div>
     </div>
   </footer>

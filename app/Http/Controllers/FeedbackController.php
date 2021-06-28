@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Feedback;
 
 class FeedbackController extends Controller
 {
@@ -13,7 +14,8 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $feedbacks = Feedback::all();
+        return view ('author.feedback',compact('feedbacks'));
     }
 
     /**
@@ -21,9 +23,10 @@ class FeedbackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $feedbacks = Feedback::create($request->all());
+        return redirect('author/feedback');
     }
 
     /**
@@ -54,9 +57,11 @@ class FeedbackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $feedbacks = Feedback::findOrfail($request->id);
+        $feedbacks->update($request->all());
+        return redirect('author/feedback');
     }
 
     /**
@@ -77,8 +82,10 @@ class FeedbackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $feedbacks = Feedback::find($request->id);
+        $feedbacks->delete();
+        return redirect('author/feedback');
     }
 }

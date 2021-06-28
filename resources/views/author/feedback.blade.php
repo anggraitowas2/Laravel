@@ -34,7 +34,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="/" class="logo"><b>Star<span>Dom</span></b></a>
+      <a href="index.html" class="logo"><b>Star<span>dom</span></b></a>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           
@@ -56,11 +56,10 @@
         *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
     <aside>
-    
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <!-- <p class="centered"><a href="profile.html"><img src="" class="img-circle" width="80"></a></p> -->
+          <!-- <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p> -->
           <h5 class="centered">{{ Auth::user()->name }}</h5>
           <li class="mt">
             <a href="/">
@@ -74,25 +73,26 @@
               <span>Member</span>
               </a></li>              
               <li class="sub-menu">
-            <a href="author/workshop">
+            <a href="/author/workshop">
               <i class="fa fa-apple"></i>
               <span>Workshop</span>
               </a></li>
               <li class="sub-menu">
-            <a href="author/feedback">
+            <a href="/author/feedback">
               <i class="fa fa-windows"></i>
               <span>Feedback</span>
               </a></li>
               <li class="sub-menu">
-            <a href="author/course">
+            <a href="/author/course">
               <i class="fa fa-linux"></i>
               <span>Course</span>
               </a></li>
               <li class="sub-menu">
-            <a href="author/pricing">
+            <a href="/author/pricing">
               <i class="fa fa-google"></i>
               <span>Pricing</span>
               </a></li>
+           
         <!-- sidebar menu end-->
       </div>
     </aside>
@@ -103,7 +103,7 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i>Data Member</h3>
+        <h3><i class="fa fa-angle-right"></i>Feedback</h3>
         <!-- @if(session('sukses'))
         <div class="alert alert-success" role="alert">
   Success
@@ -111,7 +111,7 @@
 @endif -->
           <div class="col-lg-12"><!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Member
+  Add Feedback
 </button>
 
 <!-- Modal -->
@@ -123,25 +123,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="" method="POST" enctype="multipart/form-data">
+      <form action="" method="POST">
       @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
     <input name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Position</label>
-    <input name="position"type="text" class="form-control" id="exampleInput" placeholder ='Enter your position Bro'>
+    <label for="exampleInputEmail1" class="form-label">Feedback</label>
+    <input name="feed"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
   </div>
-  <div class="mb-3">
-  
-    <label for="exampleInputPassword1" class="form-label">Quote</label>
-    <input name="quote" type="text" class="form-control" id="exampleInputPassword1" placeholder ='Enter your quote'>
-  </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Picture</label>
-  <input name="picture" type="file" accept="image/png image/jpeg image/jpg" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-</div>
   
 
       </div>
@@ -159,32 +150,27 @@
                 <hr>
                 <thead>
                   <tr>
-                    <th><i class="fa fa-bullhorn"></i> Nama</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Position</th>
-                    <th><i class="fa fa-bookmark"></i>Quote</th>
-                    <th><i class="fa fa-android"></i>Picture</th>
+                    <th><i class="fa fa-bullhorn"></i> Name</th>
+                    <th><i class="fa fa-android"></i>Feedback</th>
                     <th><i class=" fa fa-edit"></i> Action</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                @foreach($members as $member)
-                  <tr>                  
-                    <td> {{$member->name}} </td>
-                    <td class="hidden-phone">{{$member->position}}</td>
-                    <td class="hidden-phone">{{$member->quote}}</td>
-                    <td><img src="{{ asset('img/'. $member->picture)}}" width="100px"alt="Image"></td>
-                    
+                  <tr>
+                  @foreach($feedbacks as $feedback)
+                    <td>{{$feedback->name}}</td>
+                    <td>{{$feedback->feed}}</td>
                     <td><div class="col-lg-12"><!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{$member->id}}">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{$feedback->id}}">
   Edit
 </button>
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$member->id}}">
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$feedback->id}}">
   Delete
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="edit{{$member->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit{{$feedback->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -195,23 +181,15 @@
       <form action="" method="POST">
       @method('PUT')
       @csrf
-      <input type="hidden" name="id" value="{{$member->id}}">
+      <input type="hidden" name="id" value="{{$feedback->id}}">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
-    <input value="{{$member->name}}" name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
+    <input value="{{$feedback->name}}" name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Position</label>
-    <input value="{{$member->position}}"name="position"type="text" class="form-control" id="exampleInput" placeholder ='Enter your position Bro'>
+    <label for="exampleInputEmail1" class="form-label">Feedback</label>
+    <input value="{{$feedback->feed}}" name="feed"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder ='Enter your name Bro'>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Quote</label>
-    <input value="{{$member->quote}}"name="quote" type="text" class="form-control" id="exampleInputPassword1" placeholder ='Enter your quote'>
-  </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Picture</label>
-  <input value="{{$member->picture}}"name="picture" type="file" accept="image/png image/jpeg image/jpg" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-</div>
   
 
       </div>
@@ -227,7 +205,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="delete{{$member->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="delete{{$feedback->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -236,10 +214,9 @@
       </div>
       <div class="modal-body">
       <form action="" method="POST">
-      
       @method('DELETE')
       @csrf
-      <input type="hidden" name="id" value="{{$member->id}}">
+      <input type="hidden" name="id" value="{{$feedback->id}}">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Are you sure to delete?</label>
   </div>

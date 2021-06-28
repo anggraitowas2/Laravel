@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Course;
 class CourseController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::all();
+        return view ('author.course',compact('courses'));
     }
 
     /**
@@ -21,9 +22,10 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $courses = Course::create($request->all());
+        return redirect('author/course');
     }
 
     /**
@@ -54,9 +56,11 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $courses = Course::findOrFail($request->id);
+        $courses->update($request->all());
+        return redirect('author/course');
     }
 
     /**
@@ -66,7 +70,7 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
         //
     }
@@ -77,8 +81,10 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $courses = Course::find($request->id);
+        $courses->delete();
+        return redirect('author/course');
     }
 }
