@@ -288,7 +288,7 @@
       @foreach ($courses as $course)
         <div class="col-md-3 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
-            <img height="300"width="300"src="{{asset('img/' .$course->picture)}}" class="img-responsive">
+            <img height="500"width="300"src="{{asset('img/' .$course->picture)}}" class="img-responsive">
             <figcaption>
               <h3>{{$course->name}}</h3>
               <p style="text">{{$course->statement}}</p>
