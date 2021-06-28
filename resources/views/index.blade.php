@@ -231,7 +231,7 @@
           <div class="pm-staff-profile-container">
             <div class="pm-staff-profile-image-wrapper text-center">
               <div class="pm-staff-profile-image">
-                <img src="{{ asset('img/'. $member->picture)}}"class="img-thumbnail img-circle"></img>
+                <img height="3000px"width="3000px"src="{{ asset('img/'. $member->picture)}}"class="img-thumbnail img-circle"></img>
               </div>
             </div>
             <div class="pm-staff-profile-details text-center">
