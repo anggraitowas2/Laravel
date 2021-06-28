@@ -61,7 +61,7 @@ Route::delete('/author/course',[CourseController::class,'destroy']);
 
 
 //INDEX
-Route::get('/',[IndexController::class,'member']);
+Route::get('/',[IndexController::class,'member'])->name('main');
 
 //MEMBER
 Route::get('redirects',[MemberController::class,'index']);
@@ -86,6 +86,17 @@ Route::get('/author/pricing',[PricingController::class,'index']);
 Route::post('/author/pricing',[PricingController::class,'create']);
 Route::put('/author/pricing',[PricingController::class,'edit']);
 Route::delete('/author/pricing',[PricingController::class,'destroy']);
+
+// // USER ROUTES
+// Route::get('/', 'FrontController@main')->name('main');
+
+// ADMIN ROUTES
+// Route::group([
+//     'as' => 'admin.',
+//     'middleware' => [ 'Admin' ],
+// ], function () {
+//     Route::get('dashboard', 'AdminController@dashboard');
+// });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
